@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #070b1a;
+  color: white;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #070b1a;
+  color: white;
+  font-family: Inter, sans-serif;
+}
+
+.hero-bg {
+  background:
+    radial-gradient(circle at top left,
+      rgba(6,182,212,.18),
+      transparent 35%),
+
+    radial-gradient(circle at bottom right,
+      rgba(139,92,246,.18),
+      transparent 40%),
+
+    radial-gradient(circle at center,
+      rgba(255,255,255,.03),
+      transparent 70%),
+
+    #070B1A;
+}
+
+.terminal-header{
+    height:22px;
+    display:flex;
+    align-items:center;
+    justify-content: start;
+    gap:8px;
+    padding:0 0px;
+}
+
+.dot{
+
+    width:12px;
+    height:12px;
+    border-radius:50%;
+}
+
+.red{
+    background:#ff5f56;
+}
+
+.yellow{
+    background:#ffbd2f;
+}
+
+.green{
+    background:#27c93f;
+}
