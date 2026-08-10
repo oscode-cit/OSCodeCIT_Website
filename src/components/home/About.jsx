@@ -29,7 +29,7 @@ const About = () => {
         <SectionHeading
           badge="About Us"
           title="Building Developers Beyond the Classroom"
-          description="OSCODE is the official open-source community of Cambridge Institute of Technology, empowering students through collaboration, innovation, workshops, hackathons, and real-world development."
+          description="OSCode CIT is the official open-source community of Cambridge Institute of Technology, empowering students through collaboration, innovation, workshops, hackathons, and real-world development."
         />
 
         <div className="mt-16 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

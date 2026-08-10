@@ -23,7 +23,7 @@ const FloatingCard = () => {
 
         <pre className="text-sm leading-7 px-5">
     <span className="text-purple-400">const</span>{" "}
-    <span className="text-cyan-400">oscode</span>{" "}
+    <span className="text-cyan-400">oscode_cit</span>{" "}
     <span className="text-gray-300">= {"{"}</span>
     {"\n  "}
     <span className="text-yellow-400">passion</span>

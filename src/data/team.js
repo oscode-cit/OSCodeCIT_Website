@@ -187,20 +187,11 @@ const team = [
   },
 
   // Social Media & Events
-  {
-    id: 19,
-    name: "Aishwarya Gadela",
-    role: "Social Media & Events Lead",
-    department: "Social Media & Events",
-    image: "/images/team/Aishwarya.jpg",
-    linkedin: "https://www.linkedin.com/in/aishwarya-gadela-4772b2261",
-    github: "https://github.com/AishwaryaGadela",
-    instagram: "https://www.instagram.com/aishwarya_gadela",
-  },
+ 
   {
     id: 20,
     name: "Anubhab Ray",
-    role: "Member",
+    role: "Social Media & Events Member",
     department: "Social Media & Events",
     image: "/images/team/Anubhav_AR.jpg",
     linkedin: "https://www.linkedin.com/in/anubhab-ray-058126318/",
@@ -210,7 +201,7 @@ const team = [
   {
     id: 21,
     name: "Saurab Yadav",
-    role: "Member",
+    role: "Social Media & Events Member",
     department: "Social Media & Events",
     image: "/images/team/Saurab_Yadav.jpg",
     linkedin: "",

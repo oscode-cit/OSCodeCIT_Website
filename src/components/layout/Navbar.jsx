@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import Container from "../common/Container";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,41 +15,50 @@ const Navbar = () => {
     { name: "Contact", path: "/contact" },
   ];
 
+  const navClass = ({ isActive }) =>
+    `rounded-lg p-3 transition-all ${
+      isActive
+        ? "text-cyan-400 bg-cyan-100/10"
+        : "hover:text-cyan-400 hover:bg-cyan-100/10"
+    }`;
+
   return (
     <header className="fixed top-5 left-1/2 z-50 w-[92%] max-w-6xl -translate-x-1/2">
       <div className="rounded-2xl border border-white/10 bg-[#070B1A]/80 px-5 backdrop-blur-xl shadow-2xl">
         <Container>
           <div className="flex h-16 items-center justify-between">
-            {/* Logo */}
             <Link to="/">
               <img
                 src="/images/logos/logo.svg"
-                alt="OSCODE Logo"
+                alt="OSCode CIT Logo"
                 className="h-11 w-auto"
               />
             </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-4">
-              <Link to="/" className="transition hover:text-cyan-400 hover:bg-cyan-100/10 transition-all rounded-lg p-3">
+              <NavLink to="/" end className={navClass}>
                 Home
-              </Link>
+              </NavLink>
 
-              <a href="/#about" className="transition hover:text-cyan-400 hover:bg-cyan-100/10 transition-all rounded-lg p-3">
+              <a
+                href="/#about"
+                className="rounded-lg p-3 transition-all hover:text-cyan-400 hover:bg-cyan-100/10"
+              >
                 About
               </a>
 
-              <Link to="/events" className="transition hover:text-cyan-400 hover:bg-cyan-100/10 transition-all rounded-lg p-3">
+              <NavLink to="/events" className={navClass}>
                 Events
-              </Link>
+              </NavLink>
 
-              <Link to="/team" className="transition hover:text-cyan-400 hover:bg-cyan-100/10 transition-all rounded-lg p-3">
+              <NavLink to="/team" className={navClass}>
                 Team
-              </Link>
+              </NavLink>
 
-              <Link to="/contact" className="transition hover:text-cyan-400 hover:bg-cyan-100/10 transition-all rounded-lg p-3">
+              <NavLink to="/contact" className={navClass}>
                 Contact
-              </Link>
+              </NavLink>
             </nav>
 
             {/* Mobile Button */}
@@ -60,16 +70,33 @@ const Navbar = () => {
           {/* Mobile Menu */}
           {isOpen && (
             <div className="md:hidden mb-4 overflow-hidden rounded-xl border border-white/10 bg-[#0b1220]">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className="block border-b border-white/10 px-6 py-4 transition hover:bg-white/5"
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {navLinks.map((link) =>
+                link.name === "About" ? (
+                  <a
+                    key={link.name}
+                    href="/#about"
+                    onClick={() => setIsOpen(false)}
+                    className="block border-b border-white/10 px-6 py-4 transition hover:bg-white/5"
+                  >
+                    About
+                  </a>
+                ) : (
+                  <NavLink
+                    key={link.name}
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className={({ isActive }) =>
+                      `block border-b border-white/10 px-6 py-4 transition ${
+                        isActive
+                          ? "text-cyan-400 bg-cyan-100/10"
+                          : "hover:bg-white/5"
+                      }`
+                    }
+                  >
+                    {link.name}
+                  </NavLink>
+                ),
+              )}
             </div>
           )}
         </Container>

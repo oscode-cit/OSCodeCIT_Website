@@ -11,7 +11,7 @@ const Team = () => {
       <Container>
         <SectionHeading
           badge="Our Team"
-          title="Meet The People Behind OSCODE"
+          title="Meet The People Behind OSCode CIT"
           description="A passionate group of students building a culture of learning, innovation, and open source."
         />
 

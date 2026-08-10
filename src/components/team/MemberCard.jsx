@@ -12,7 +12,7 @@ const MemberCard = ({ member }) => {
       <div className="flex flex-col overflow-hidden">
         <h3 className="mt-4 text-sm sm:text-lg font-bold">{member.name}</h3>
 
-        <p className="mt-2 text-cyan-400 text-xs sm:text-sm whitespace-nowrap">
+        <p className="mt-2 text-cyan-400 text-xs sm:text-sm">
           {member.role}
         </p>
 

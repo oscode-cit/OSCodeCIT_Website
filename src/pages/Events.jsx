@@ -11,7 +11,7 @@ const Events = () => {
         <SectionHeading
           badge="Events"
           title="Learn. Build. Network."
-          description="Discover workshops, hackathons and community events organized by OSCODE."
+          description="Discover workshops, hackathons and community events organized by OSCode CIT."
         />
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3 items-stretch">

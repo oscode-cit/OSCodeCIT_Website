@@ -18,7 +18,9 @@ const events = [
     title: "GSoC Roadmap",
     date: "20 Nov 2025",
     location: "CIT Bangalore, SMV Auditorium",
-    images: ["/images/events/gsoc-roadmap-2026/GSOC.jpg"],
+    images: ["/images/events/gsoc-roadmap-2026/GSOC.jpg",
+      "/images/events/gsoc-roadmap-2026/gsoc-1.webp",
+      "/images/events/gsoc-roadmap-2026/gsoc-2.webp",],
     description:
       "OSCode CIT presents: Your Path to GSoC 2026. Get clarity on preparation, open source contributions, and cracking GSoC 💡",
   },

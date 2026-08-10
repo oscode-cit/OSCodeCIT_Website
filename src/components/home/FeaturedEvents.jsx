@@ -15,7 +15,7 @@ const FeaturedEvents = () => {
         <SectionHeading
           badge="Featured Events"
           title="Learn, Build & Grow With Us"
-          description="From workshops to hackathons, explore the events that shape the OSCODE community."
+          description="From workshops to hackathons, explore the events that shape the OSCode CIT community."
         />
 
         <div className="mt-16 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
