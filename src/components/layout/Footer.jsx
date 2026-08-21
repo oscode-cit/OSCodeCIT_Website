@@ -4,7 +4,7 @@ import Container from "../common/Container";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-white/10 mt-24">
+    <footer className="border-t border-white/10 bg-[#070B1A] mt-24">
       <Container>
         <div className="py-16 grid gap-12 grid-cols-1 md:grid-cols-3 text-center md:text-left">
           {/* Brand */}
