@@ -1,15 +1,16 @@
 import Hero from "../components/home/Hero";
+import AchievementsSection from "../components/home/AchievementsSection";
 import About from "../components/home/About";
 import FeaturedEvents from "../components/home/FeaturedEvents";
-import Footer from "../components/layout/Footer";
 
 const Home = () => {
   return (
-    <>
+    <main className="relative">
       <Hero />
+      <AchievementsSection />
       <About />
       <FeaturedEvents />
-    </>
+    </main>
   );
 };
 

@@ -1,11 +1,7 @@
-const SecondaryButton = ({
-  children,
-  className = "",
-  ...props
-}) => {
+const SecondaryButton = ({ children, className = "", ...props }) => {
   return (
     <button
-      className={`rounded-full border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md transition hover:bg-white/10 ${className}`}
+      className={`rounded-full border border-white/20 bg-black/60 px-6 py-3 font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-[#00A8FF] hover:bg-[#00A8FF]/10 hover:text-[#00D2FF] hover:shadow-[0_0_20px_rgba(0,168,255,0.25)] ${className}`}
       {...props}
     >
       {children}

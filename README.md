@@ -87,15 +87,19 @@ npm run dev
 
 ```
 OSCodeCIT_Website/
-│
 ├── public/
 │   └── images/
+│       ├── achievements/
 │       ├── events/
 │       │   ├── bengaluru-tech-summit-2025/
+│       │   ├── deftech-2026/
 │       │   ├── first-drone-workshop-2026/
+│       │   ├── github-session-2025/
 │       │   ├── gsoc-roadmap-2026/
-│       │   └── iisc-open-day-2026/
-│       │
+│       │   ├── iisc-open-day-2026/
+│       │   ├── james-dyson-2026/
+│       │   ├── microsoft-techsync-2026/
+│       │   └── oscodecit-inauguration-2025/
 │       ├── favicon/
 │       ├── hero/
 │       ├── logos/
@@ -104,9 +108,7 @@ OSCodeCIT_Website/
 ├── src/
 │   ├── App.jsx
 │   ├── main.jsx
-│   │
 │   ├── components/
-│   │   │
 │   │   ├── common/
 │   │   │   ├── BackgroundGlow.jsx
 │   │   │   ├── Container.jsx
@@ -116,36 +118,27 @@ OSCodeCIT_Website/
 │   │   │   ├── SecondaryButton.jsx
 │   │   │   ├── SectionBadge.jsx
 │   │   │   └── SectionHeading.jsx
-│   │   │
 │   │   ├── contact/
 │   │   │   └── ContactSection.jsx
-│   │   │
 │   │   ├── events/
-│   │   │   ├── EventCard.jsx
-│   │   │   └── UpcomingEvents.jsx
-│   │   │
+│   │   │   └── EventCard.jsx
 │   │   ├── home/
 │   │   │   ├── About.jsx
-│   │   │   ├── FeatureCard.jsx
+│   │   │   ├── AchievementsSection.jsx
 │   │   │   ├── FeaturedEvents.jsx
-│   │   │   ├── FloatingCard.jsx
 │   │   │   └── Hero.jsx
-│   │   │
 │   │   ├── layout/
 │   │   │   ├── Footer.jsx
 │   │   │   ├── Navbar.jsx
 │   │   │   ├── RootLayout.jsx
 │   │   │   └── ScrollToTop.jsx
-│   │   │
 │   │   └── team/
-│   │       ├── Department.jsx
-│   │       ├── MemberCard.jsx
-│   │       └── TeamGrid.jsx
+│   │       └── MemberCard.jsx
 │   │
 │   ├── data/
+│   │   ├── achievements.js
 │   │   ├── events.js
-│   │   ├── team.js
-│   │   └── whatWeDo.js
+│   │   └── team.js
 │   │
 │   ├── pages/
 │   │   ├── Contact.jsx
@@ -160,11 +153,11 @@ OSCodeCIT_Website/
 ├── .gitignore
 ├── eslint.config.js
 ├── index.html
-├── package.json
 ├── package-lock.json
+├── package.json
+├── README.md
 ├── vercel.json
 ├── vite.config.js
-├── README.md
 └── LICENSE
 ```
 

@@ -1,7 +1,7 @@
 const GradientText = ({ children, className = "" }) => {
   return (
     <span
-      className={`bg-linear-to-b from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-transparent ${className}`}
+      className={`bg-gradient-to-r from-[#00D2FF] via-[#00A8FF] to-[#00D2FF] bg-clip-text text-transparent font-extrabold ${className}`}
     >
       {children}
     </span>

@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
-import Container from "../common/Container";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { Menu, X, Terminal } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,91 +14,115 @@ const Navbar = () => {
     { name: "Contact", path: "/contact" },
   ];
 
-  const navClass = ({ isActive }) =>
-    `rounded-lg p-3 transition-all ${
-      isActive
-        ? "text-cyan-400 bg-cyan-100/10"
-        : "hover:text-cyan-400 hover:bg-cyan-100/10"
-    }`;
-
   return (
-    <header className="fixed top-5 left-1/2 z-50 w-[92%] max-w-6xl -translate-x-1/2">
-      <div className="rounded-2xl border border-white/10 bg-[#070B1A]/80 px-5 backdrop-blur-xl shadow-2xl">
-        <Container>
-          <div className="flex h-16 items-center justify-between">
-            <Link to="/">
-              <img
-                src="/images/logos/logo.svg"
-                alt="OSCode CIT Logo"
-                className="h-11 w-auto"
-              />
-            </Link>
+    <header className="fixed top-4 left-1/2 z-50 w-[92%] max-w-6xl -translate-x-1/2">
+      <div className="rounded-2xl border border-[#00A8FF]/20 bg-[#0a1022]/70 px-4 sm:px-6 py-2.5 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-all duration-300">
+        <div className="flex items-center justify-between">
+          
+          <Link to="/" className="flex items-center gap-3 group">
+            <img
+              src="/images/logos/logo.svg"
+              alt="OSCode CIT Logo"
+              className="h-8 sm:h-9 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
+            <span className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-[#00A8FF]/30 bg-[#00A8FF]/10 px-2.5 py-0.5 text-[11px] font-bold text-[#00D2FF]">
+              <Terminal size={12} className="text-[#00D2FF]" />
+              CIT Chapter
+            </span>
+          </Link>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-4">
-              <NavLink to="/" end className={navClass}>
-                Home
-              </NavLink>
-
-              <a
-                href="/#about"
-                className="rounded-lg p-3 transition-all hover:text-cyan-400 hover:bg-cyan-100/10"
-              >
-                About
-              </a>
-
-              <NavLink to="/events" className={navClass}>
-                Events
-              </NavLink>
-
-              <NavLink to="/team" className={navClass}>
-                Team
-              </NavLink>
-
-              <NavLink to="/contact" className={navClass}>
-                Contact
-              </NavLink>
-            </nav>
-
-            {/* Mobile Button */}
-            <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
-
-          {/* Mobile Menu */}
-          {isOpen && (
-            <div className="md:hidden mb-4 overflow-hidden rounded-xl border border-white/10 bg-[#0b1220]">
-              {navLinks.map((link) =>
-                link.name === "About" ? (
+          <nav className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] p-1">
+            {navLinks.map((link) => {
+              if (link.name === "About") {
+                return (
                   <a
                     key={link.name}
                     href="/#about"
-                    onClick={() => setIsOpen(false)}
-                    className="block border-b border-white/10 px-6 py-4 transition hover:bg-white/5"
-                  >
-                    About
-                  </a>
-                ) : (
-                  <NavLink
-                    key={link.name}
-                    to={link.path}
-                    onClick={() => setIsOpen(false)}
-                    className={({ isActive }) =>
-                      `block border-b border-white/10 px-6 py-4 transition ${
-                        isActive
-                          ? "text-cyan-400 bg-cyan-100/10"
-                          : "hover:bg-white/5"
-                      }`
-                    }
+                    className="rounded-full px-4 py-1.5 text-xs font-semibold text-slate-300 transition hover:text-[#00D2FF] hover:bg-white/5"
                   >
                     {link.name}
-                  </NavLink>
-                ),
-              )}
-            </div>
+                  </a>
+                );
+              }
+
+              return (
+                <NavLink
+                  key={link.name}
+                  to={link.path}
+                  end={link.path === "/"}
+                  className={({ isActive }) =>
+                    `rounded-full px-4 py-1.5 text-xs font-bold transition-all duration-200 ${
+                      isActive
+                        ? "bg-[#00A8FF] text-black shadow-md shadow-[#00A8FF]/30"
+                        : "text-slate-300 hover:text-white hover:bg-white/5"
+                    }`
+                  }
+                >
+                  {link.name}
+                </NavLink>
+              );
+            })}
+          </nav>
+
+          <div className="hidden md:flex items-center">
+            <Link
+              to="/events"
+              className="rounded-xl border border-[#00A8FF]/50 bg-[#0c1329]/90 px-4 py-2 text-xs font-bold text-[#00D2FF] transition-all duration-300 hover:bg-[#00A8FF] hover:text-black hover:shadow-[0_0_20px_rgba(0,168,255,0.4)]"
+            >
+              Explore Events
+            </Link>
+          </div>
+
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white hover:bg-white/10 md:hidden"
+            aria-label="Toggle Navigation"
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="mt-3 overflow-hidden rounded-xl border border-[#00A8FF]/20 bg-[#080e1e]/95 p-3 md:hidden"
+            >
+              <div className="flex flex-col gap-1">
+                {navLinks.map((link) =>
+                  link.name === "About" ? (
+                    <a
+                      key={link.name}
+                      href="/#about"
+                      onClick={() => setIsOpen(false)}
+                      className="rounded-lg px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-[#00D2FF]"
+                    >
+                      About
+                    </a>
+                  ) : (
+                    <NavLink
+                      key={link.name}
+                      to={link.path}
+                      onClick={() => setIsOpen(false)}
+                      end={link.path === "/"}
+                      className={({ isActive }) =>
+                        `rounded-lg px-4 py-2.5 text-sm font-bold transition ${
+                          isActive
+                            ? "bg-[#00A8FF] text-black"
+                            : "text-slate-300 hover:bg-white/10 hover:text-[#00D2FF]"
+                        }`
+                      }
+                    >
+                      {link.name}
+                    </NavLink>
+                  )
+                )}
+              </div>
+            </motion.div>
           )}
-        </Container>
+        </AnimatePresence>
       </div>
     </header>
   );
