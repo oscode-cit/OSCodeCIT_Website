@@ -67,7 +67,7 @@ const AchievementsSection = () => {
                       </div>
 
                       <div className="mt-6 flex items-baseline gap-4">
-                        <h4 className="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-500">
+                        <h4 className="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-linear-to-r from-amber-300 via-yellow-200 to-amber-500">
                           {item.metric}
                         </h4>
                         <span className="text-sm font-semibold uppercase tracking-widest text-slate-400">
@@ -81,7 +81,7 @@ const AchievementsSection = () => {
                     </div>
 
                     <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
-                      <span>Cambridge Institute of Technology</span>
+                      <span>Cambridge Institute of Technology, Bengaluru</span>
                       <span className="flex items-center gap-1 text-cyan-400 font-medium">
                         Inspiring Future Batches <ArrowUpRight size={15} />
                       </span>

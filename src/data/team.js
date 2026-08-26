@@ -128,6 +128,16 @@ const team = [
   },
   {
     id: 13,
+    name: "Anshika Singh",
+    role: "Tech Team Member",
+    department: "Tech",
+    image: "/images/team/Anshika.png",
+    linkedin: "https://www.linkedin.com/in/anshika-singh-14b74638b",
+    github: "",
+    instagram: "https://www.instagram.com/bookmaniax?igsh=dzkxajYyNHZqYnZu",
+  },
+  {
+    id: 14,
     name: "Deeksha S K",
     role: "Tech Team Member",
     department: "Tech",
@@ -137,7 +147,7 @@ const team = [
     instagram: "https://www.instagram.com/deeksha.sk_",
   },
   {
-    id: 14,
+    id: 15,
     name: "Deepraj Kumar Gupta",
     role: "Tech Team Member",
     department: "Tech",
@@ -146,7 +156,7 @@ const team = [
     instagram: "https://www.instagram.com/deepraj_.05/",
   },
   {
-    id: 15,
+    id: 16,
     name: "Rakesh Kumar Shah",
     role: "Tech Team Member",
     department: "Tech",
@@ -156,7 +166,7 @@ const team = [
     instagram: "https://www.instagram.com/rakeshshah3358",
   },
   {
-    id: 16,
+    id: 17,
     name: "Sharath",
     role: "Tech Team Member",
     department: "Tech",
@@ -166,7 +176,7 @@ const team = [
     instagram: "",
   },
   {
-    id: 17,
+    id: 18,
     name: "Tejas S",
     role: "Tech Team Member",
     department: "Tech",
@@ -174,16 +184,6 @@ const team = [
     linkedin: "https://www.linkedin.com/in/tejas-s-5237ba32b",
     github: "https://github.com/Tejas-Coder-07",
     instagram: "https://www.instagram.com/tejas_verse_27",
-  },
-  {
-    id: 18,
-    name: "Anshika Singh",
-    role: "Tech Team Member",
-    department: "Tech",
-    image: "/images/team/Anshika.png",
-    linkedin: "https://www.linkedin.com/in/anshika-singh-14b74638b",
-    github: "",
-    instagram: "https://www.instagram.com/bookmaniax?igsh=dzkxajYyNHZqYnZu",
   },
 
   // Social Media & Events

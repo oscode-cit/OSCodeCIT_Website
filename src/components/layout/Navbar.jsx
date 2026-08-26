@@ -64,15 +64,6 @@ const Navbar = () => {
             })}
           </nav>
 
-          <div className="hidden md:flex items-center">
-            <Link
-              to="/events"
-              className="rounded-xl border border-[#00A8FF]/50 bg-[#0c1329]/90 px-4 py-2 text-xs font-bold text-[#00D2FF] transition-all duration-300 hover:bg-[#00A8FF] hover:text-black hover:shadow-[0_0_20px_rgba(0,168,255,0.4)]"
-            >
-              Explore Events
-            </Link>
-          </div>
-
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white hover:bg-white/10 md:hidden"

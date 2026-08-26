@@ -6,7 +6,7 @@ import Container from "../common/Container";
 const Footer = () => {
   return (
     <footer className="relative mt-32 border-t border-white/10 bg-[#080d1e] overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[1px] w-3/4 bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px w-3/4 bg-linear-to-r from-transparent via-cyan-400/50 to-transparent" />
 
       <Container>
         <div className="py-16 grid gap-12 grid-cols-1 md:grid-cols-12">

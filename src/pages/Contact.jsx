@@ -184,7 +184,7 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 py-4 font-bold text-slate-950 transition-all duration-300 hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] hover:scale-[1.01]"
+                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-linear-to-r from-cyan-400 via-blue-500 to-indigo-500 py-4 font-bold text-slate-950 transition-all duration-300 hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] hover:scale-[1.01]"
                 >
                   <Send size={18} />
                   Open in Gmail / Email Client

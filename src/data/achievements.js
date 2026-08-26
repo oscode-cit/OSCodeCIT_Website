@@ -9,6 +9,6 @@ export const achievements = [
     image: "/images/achievements/yamini-placement.jpeg",
     description:
       "Secured a milestone placement of 30 LPA, standing as a testament to technical excellence, continuous building, and community leadership.",
-    tags: ["Campus Placement", "Alumni Success", "Tier-1 Offer"],
+    tags: ["Direct Recruitment", "Software Engineering", "Alumni Milestone"],
   },
 ];

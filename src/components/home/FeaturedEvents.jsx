@@ -10,7 +10,7 @@ import events from "../../data/events";
 
 const FeaturedEvents = () => {
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-20 md:py-25">
       <Container>
         <SectionHeading
           badge="Featured Events"
