@@ -1,0 +1,93 @@
+export const projects = [
+  {
+    id: "vibetagger",
+    title: "Vibe-Tagger",
+    creator: "Kirthi",
+    category: "AI & Social Tech",
+    status: "Completed",
+    description:
+      "An AI-powered social media copywriter that uses computer vision to analyze photo composition and generate contextually relevant, viral-ready captions in seconds.",
+    fullDescription:
+      "OSCode CIT's first official open-source project designed to eliminate 'caption block' for social media creators. Unlike traditional tools requiring manual text descriptions, Vibe-Tagger leverages multimodal LLMs and computer vision to inspect composition, lighting, and subjects—generating custom vibe-tuned captions (Savage, Professional, Gen-Z, Aesthetic) with 1-tap clipboard copying.",
+    features: [
+      "Multi-Modal Vision Analysis: Direct image uploads analyzed via Google Gemini 3 Flash without manual prompting",
+      "Dynamic Vibe Presets: Curates customizable tone styles including Short, Witty, Professional, Savage, and Gen-Z",
+      "One-Tap Clipboard Integration: Built-in instant copying for seamless social media posting",
+      "Cyber-Black Glassmorphism: Responsive, mobile-first design built with Tailwind CSS and Framer Motion"
+    ],
+    technologies: [
+      "React 19",
+      "Google Gemini 3 Flash",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Lucide React",
+      "Vercel"
+    ],
+    github: "https://github.com/oscode-cit/vibe-tagger",
+    liveDemo: "https://vibe-tagger-oscode-cit.vercel.app",
+    images: ["/images/logos/logo.svg"],
+  },
+  {
+    id: "oscode-web-platform",
+    title: "OSCode CIT Official Platform",
+    creator: "OSCode CIT Technical Team",
+    category: "Open Source",
+    status: "Completed",
+    description:
+      "The official open-source community platform and activity engine built for Cambridge Institute of Technology students, featuring modular event logs, dynamic registries, and club telemetry.",
+    fullDescription:
+      "The OSCode CIT platform serves as the central hub for the student developer community[cite: 17]. Built with modern React and Framer Motion, it features real-world project repositories, transparent leadership archives, activity registries, and an interactive interface designed to bridge academic learning with open-source development.",
+    features: [
+      "Interactive event logging with multi-image uncropped modal galleries",
+      "Modular project showcase and student achievement registry with popups",
+      "Custom precision theme inspired by OSCode electric blue brand identity",
+      "Client-side zero-backend direct email compose communication workflows"
+    ],
+    technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite", "Vercel"],
+    github: "https://github.com/oscode-cit/OSCodeCIT_Website",
+    liveDemo: "https://oscodecit.in",
+    images: ["/images/logos/logo.svg"],
+  },
+  {
+    id: "os-club-live-collaboration",
+    title: "OS.CLUB — Real-Time Open Source Collaboration Platform",
+    creator: "OSCode CIT Technical Team",
+    category: "Open Source",
+    status: "Active / Ongoing",
+    description:
+      "A real-time GitHub-integrated gamified platform turning coding activity into a live social experience with streak tracking, issue claiming, and live coding pods[cite: 15].",
+    fullDescription:
+      "OS.CLUB connects directly with GitHub organizations and translates repository events into an interactive live workspace[cite: 15]. Designed to make open-source accessible to beginners, the platform features a Command Center for leaders to track live commits, a Contribution Hub with swipeable issue cards for beginners, and a Club Lounge with active stream pods and leaderboards[cite: 15].",
+    features: [
+      "Command Center: Live commit counting, webhook streams, and repo telemetry[cite: 15]",
+      "Contribution Hub: Tagged good-first-issues with 1-click instant claiming[cite: 15]",
+      "Club Lounge: Real-time presence indicators, stream pods, and streak counters[cite: 15]",
+      "Automated scoring, gamified leaderboards, and WebSocket push updates[cite: 15]"
+    ],
+    technologies: ["React", "Flutter", "Node.js", "WebSockets", "GitHub API", "Firestore"],
+    github: "https://github.com/oscode-cit",
+    liveDemo: "",
+    images: ["/images/logos/logo.svg"],
+  },
+  {
+    id: "snippet-studio",
+    title: "SnippetStudio",
+    creator: "OSCode CIT Technical Team",
+    category: "Developer Tools",
+    status: "Active / Ongoing",
+    description:
+      "A collaborative web-based code editor and execution workspace allowing developers to write, execute, save, fork, and share code snippets across multiple languages[cite: 16].",
+    fullDescription:
+      "SnippetStudio is a browser-based developer ideation tool built during a 7-day engineering sprint[cite: 16]. It integrates Monaco Editor with cloud execution engines to compile and run code in real-time, backed by cloud storage for forkable snippet links and preconfigured language starter templates[cite: 16].",
+    features: [
+      "Monaco Editor integration with language selection and syntax highlighting[cite: 16]",
+      "Remote code execution and runtime error tracing via Judge0/Piston API[cite: 16]",
+      "Snippet save, fork, and share URL generation with Supabase backend[cite: 16]",
+      "Preloaded starter code templates and customizable developer themes[cite: 16]"
+    ],
+    technologies: ["React", "Monaco Editor", "Supabase", "Judge0 / Piston API", "Tailwind CSS"],
+    github: "https://github.com/oscode-cit",
+    liveDemo: "",
+    images: ["/images/logos/logo.svg"],
+  },
+];

@@ -2,6 +2,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 
 import Home from "./pages/Home";
+import ProjectsPage from "./pages/ProjectsPage";
+import AchievementsPage from "./pages/AchievementsPage";
 import Events from "./pages/Events";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
@@ -16,6 +18,14 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "projects",
+        element: <ProjectsPage />,
+      },
+      {
+        path: "achievements",
+        element: <AchievementsPage />,
       },
       {
         path: "events",
