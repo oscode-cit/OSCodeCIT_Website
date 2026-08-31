@@ -10,7 +10,7 @@ const Projects = () => {
   const featuredProjects = projects.slice(0, 3);
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden">
+    <section id="projects" className="py-16 sm:py-24 relative overflow-hidden">
       <Container>
         <SectionHeading
           badge="What We Build"

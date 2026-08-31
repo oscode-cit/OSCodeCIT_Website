@@ -36,7 +36,7 @@ const Team = () => {
     : ["Leadership", "R&D", "Tech", "Social Media & Events"];
 
   return (
-    <section className="pt-40 pb-28 relative">
+    <section className="pt-32 sm:pt-40 pb-20 sm:pb-28 relative">
       <Container>
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">

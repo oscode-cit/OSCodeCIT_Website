@@ -2,12 +2,16 @@ import SectionBadge from "./SectionBadge";
 
 const SectionHeading = ({ badge, title, description }) => {
   return (
-    <div className="mx-auto max-w-3xl text-center">
+    <div className="mx-auto max-w-3xl px-2 text-center">
       <SectionBadge>{badge}</SectionBadge>
 
-      <h2 className="mt-5 text-5xl font-bold">{title}</h2>
+      <h2 className="mt-5 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
+        {title}
+      </h2>
 
-      <p className="mt-6 leading-8 text-gray-400">{description}</p>
+      <p className="mt-5 text-sm leading-7 text-gray-400 sm:mt-6 sm:text-base sm:leading-8">
+        {description}
+      </p>
     </div>
   );
 };

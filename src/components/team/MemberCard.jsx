@@ -34,7 +34,7 @@ const MemberCard = ({ member }) => {
               target="_blank"
               rel="noreferrer"
               aria-label={`${member.name}'s GitHub`}
-              className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white transition hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/20"
+              className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white transition hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/20 sm:h-8 sm:w-8"
             >
               <FaGithub size={15} />
             </a>
@@ -45,7 +45,7 @@ const MemberCard = ({ member }) => {
               target="_blank"
               rel="noreferrer"
               aria-label={`${member.name}'s LinkedIn`}
-              className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-slate-300 transition hover:-translate-y-0.5 hover:border-cyan-400/50 hover:bg-cyan-500/10 hover:text-cyan-300"
+              className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-slate-300 transition hover:-translate-y-0.5 hover:border-cyan-400/50 hover:bg-cyan-500/10 hover:text-cyan-300 sm:h-8 sm:w-8"
             >
               <FaLinkedin size={15} />
             </a>
@@ -56,7 +56,7 @@ const MemberCard = ({ member }) => {
               target="_blank"
               rel="noreferrer"
               aria-label={`${member.name}'s Instagram`}
-              className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-slate-300 transition hover:-translate-y-0.5 hover:border-pink-400/50 hover:bg-pink-500/10 hover:text-pink-300"
+              className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-slate-300 transition hover:-translate-y-0.5 hover:border-pink-400/50 hover:bg-pink-500/10 hover:text-pink-300 sm:h-8 sm:w-8"
             >
               <FaInstagram size={15} />
             </a>

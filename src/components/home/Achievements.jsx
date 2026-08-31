@@ -10,7 +10,7 @@ const Achievements = () => {
   const featuredAchievements = achievements.slice(0, 3);
 
   return (
-    <section id="achievements" className="py-24 relative overflow-hidden">
+    <section id="achievements" className="py-16 sm:py-24 relative overflow-hidden">
       <Container>
         <SectionHeading
           badge="Milestones & Recognition"

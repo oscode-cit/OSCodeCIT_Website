@@ -79,7 +79,7 @@ const About = () => {
                 transition={{ duration: 0.45, delay: index * 0.07 }}
               >
                 <div
-                  className={`group relative h-full flex flex-col justify-between rounded-3xl border border-white/10 bg-linear-to-b ${item.gradientBg} bg-[#0e1630]/75 p-7 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 ${item.glowBorder} hover:shadow-xl`}
+                  className={`group relative h-full flex flex-col justify-between rounded-3xl border border-white/10 bg-linear-to-b ${item.gradientBg} bg-[#0e1630]/75 p-5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 sm:p-7 ${item.glowBorder} hover:shadow-xl`}
                 >
                   <div>
                     <div

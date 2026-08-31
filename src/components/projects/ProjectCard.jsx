@@ -1,21 +1,39 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionTemplate, useMotionValue } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { ExternalLink, Sparkles, ArrowUpRight, X, Layers, CheckCircle2 } from "lucide-react";
 
 const ProjectCard = ({ project }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const handleMouseMove = ({ currentTarget, clientX, clientY }) => {
+    const { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  };
 
   return (
     <>
       {/* Clickable Card */}
-      <div
+      <motion.div
+        onMouseMove={handleMouseMove}
         onClick={() => setIsOpen(true)}
-        className="group relative flex flex-col justify-between rounded-3xl border border-white/10 bg-gradient-to-b from-[#111936]/80 via-[#0d142c]/85 to-[#090d1f]/95 p-7 backdrop-blur-xl transition-all duration-300 hover:border-[#00A8FF]/60 hover:shadow-[0_12px_35px_-8px_rgba(0,168,255,0.25)] hover:-translate-y-1.5 cursor-pointer h-full"
+        className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#111936]/80 via-[#0d142c]/85 to-[#090d1f]/95 p-5 backdrop-blur-xl transition-all duration-300 hover:border-[#00A8FF]/60 hover:shadow-[0_12px_35px_-8px_rgba(0,168,255,0.25)] hover:-translate-y-1.5 cursor-pointer h-full sm:p-7"
       >
         <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
 
-        <div>
+        <motion.div
+          className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          style={{
+            background: useMotionTemplate`
+              radial-gradient(300px circle at ${mouseX}px ${mouseY}px, rgba(0, 168, 255, 0.15), transparent 80%)
+            `,
+          }}
+        />
+
+        <div className="relative z-10">
           <div className="flex items-center justify-between gap-3 text-xs">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 font-semibold text-cyan-300">
               <Sparkles size={12} />
@@ -38,20 +56,20 @@ const ProjectCard = ({ project }) => {
             {project.technologies.slice(0, 3).map((tech) => (
               <span
                 key={tech}
-                className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs font-mono text-slate-300"
+                className="rounded-lg border border-white/10 bg-white/4 px-2.5 py-1 text-xs font-mono text-slate-300"
               >
                 {tech}
               </span>
             ))}
             {project.technologies.length > 3 && (
-              <span className="rounded-lg border border-white/5 bg-white/[0.02] px-2 py-1 text-xs font-mono text-slate-400">
+              <span className="rounded-lg border border-white/5 bg-white/2 px-2 py-1 text-xs font-mono text-slate-400">
                 +{project.technologies.length - 3}
               </span>
             )}
           </div>
         </div>
 
-        <div className="mt-8 pt-5 border-t border-white/10 flex items-center justify-between">
+        <div className="relative z-10 mt-8 pt-5 border-t border-white/10 flex items-center justify-between">
           <span className="text-xs font-mono text-slate-400">
             {project.category}
           </span>
@@ -60,7 +78,7 @@ const ProjectCard = ({ project }) => {
             View Details <ArrowUpRight size={13} />
           </span>
         </div>
-      </div>
+      </motion.div>
 
       {/* Side-by-Side Modal */}
       <AnimatePresence>

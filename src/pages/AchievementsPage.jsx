@@ -16,7 +16,7 @@ const AchievementsPage = () => {
       : achievements.filter((a) => a.category === selectedCategory);
 
   return (
-    <section className="pt-40 pb-28 relative min-h-screen">
+    <section className="pt-32 sm:pt-40 pb-20 sm:pb-28 relative min-h-screen">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <SectionBadge>Hall of Fame</SectionBadge>

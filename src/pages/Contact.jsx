@@ -26,7 +26,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-screen pt-32 pb-20 relative overflow-hidden">
+    <section className="min-h-screen pt-28 sm:pt-32 pb-16 sm:pb-20 relative overflow-hidden">
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-[140px] -z-10 pointer-events-none" />
 
       <Container>
@@ -47,7 +47,7 @@ const Contact = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="rounded-3xl border border-white/15 bg-gradient-to-b from-[#131d3b]/90 to-[#0d1428]/95 p-7 backdrop-blur-xl">
+            <div className="rounded-3xl border border-white/15 bg-gradient-to-b from-[#131d3b]/90 to-[#0d1428]/95 p-5 sm:p-7 backdrop-blur-xl">
               <div className="flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-400/10 border border-cyan-400/20 text-cyan-400">
                   <Mail size={22} />
@@ -66,7 +66,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-white/15 bg-gradient-to-b from-[#131d3b]/90 to-[#0d1428]/95 p-7 backdrop-blur-xl">
+            <div className="rounded-3xl border border-white/15 bg-gradient-to-b from-[#131d3b]/90 to-[#0d1428]/95 p-5 sm:p-7 backdrop-blur-xl">
               <div className="flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-violet-400/10 border border-violet-400/20 text-violet-400">
                   <MapPin size={22} />
@@ -85,7 +85,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-white/15 bg-gradient-to-b from-[#131d3b]/90 to-[#0d1428]/95 p-7 backdrop-blur-xl">
+            <div className="rounded-3xl border border-white/15 bg-gradient-to-b from-[#131d3b]/90 to-[#0d1428]/95 p-5 sm:p-7 backdrop-blur-xl">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400">
                 Official Channels
               </h3>

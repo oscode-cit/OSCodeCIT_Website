@@ -1,18 +1,35 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionTemplate, useMotionValue } from "framer-motion";
 import { Trophy, ArrowUpRight, X, Award, CheckCircle2 } from "lucide-react";
 
 const AchievementCard = ({ item }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const handleMouseMove = ({ currentTarget, clientX, clientY }) => {
+    const { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  };
 
   return (
     <>
       {/* Clickable Card */}
-      <div
+      <motion.div
+        onMouseMove={handleMouseMove}
         onClick={() => setIsOpen(true)}
-        className="group relative flex flex-col justify-between rounded-3xl border border-white/10 bg-[#0a1124]/85 p-6 backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_12px_35px_-8px_rgba(6,182,212,0.25)] hover:-translate-y-1.5 cursor-pointer h-full"
+        className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-[#0a1124]/85 p-5 backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_12px_35px_-8px_rgba(6,182,212,0.25)] hover:-translate-y-1.5 cursor-pointer h-full sm:p-6"
       >
-        <div>
+        <motion.div
+          className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          style={{
+            background: useMotionTemplate`
+              radial-gradient(300px circle at ${mouseX}px ${mouseY}px, rgba(6, 182, 212, 0.15), transparent 80%)
+            `,
+          }}
+        />
+        <div className="relative z-10">
           <div className="relative h-44 w-full overflow-hidden rounded-2xl bg-black/60 border border-white/10">
             <img
               src={item.image}
@@ -47,7 +64,7 @@ const AchievementCard = ({ item }) => {
           </p>
         </div>
 
-        <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+        <div className="relative z-10 mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
           <div className="flex flex-wrap gap-1.5">
             {item.tags.slice(0, 2).map((tag) => (
               <span
@@ -63,7 +80,7 @@ const AchievementCard = ({ item }) => {
             Details <ArrowUpRight size={13} />
           </span>
         </div>
-      </div>
+      </motion.div>
 
       {/* Side-by-Side Modal */}
       <AnimatePresence>

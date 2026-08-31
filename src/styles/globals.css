@@ -74,3 +74,99 @@
 .green {
   background: #22c55e;
 }
+
+/* ============================================================
+   Cooler-pass additions — purely additive, nothing above is
+   changed. Animated accents + small mobile-safety helpers.
+   ============================================================ */
+
+/* Prevents the ambient blur orbs (BackgroundGlow) from ever
+   introducing a horizontal scrollbar on narrow phones. */
+html, body {
+  max-width: 100vw;
+}
+
+/* Slimmer, on-brand scrollbar so the "IDE" feel holds up
+   past the fold too. */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #060b18;
+}
+::-webkit-scrollbar-thumb {
+  background: #16233f;
+  border-radius: 999px;
+  border: 2px solid #060b18;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1e3357;
+}
+
+/* Animated gradient sweep for GradientText — same colors,
+   just given motion so headlines feel alive instead of static. */
+@keyframes text-shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+.text-shimmer {
+  background-size: 200% auto;
+  animation: text-shimmer 4s linear infinite;
+}
+
+/* Light-sweep used on PrimaryButton for a small "cooler" hover cue. */
+@keyframes btn-sheen {
+  0% { transform: translateX(-120%) skewX(-15deg); }
+  100% { transform: translateX(220%) skewX(-15deg); }
+}
+.btn-sheen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 40%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  opacity: 0;
+  pointer-events: none;
+}
+.btn-sheen:hover::after {
+  opacity: 1;
+  animation: btn-sheen 0.9s ease forwards;
+}
+
+/* Faint scanline wash for the whole page — reinforces the
+   editor/terminal identity at very low opacity so it never
+   competes with content or hurts contrast/readability. */
+.scanline-overlay {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.025) 0px,
+    rgba(255, 255, 255, 0.025) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-shimmer,
+  .btn-sheen::after {
+    animation: none !important;
+  }
+}
+
+/* Safe-area padding for notch/pill-camera phones, now that the
+   viewport meta opts into viewport-fit=cover. Additive only —
+   falls back to 0 on devices without a safe-area inset. */
+header {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
