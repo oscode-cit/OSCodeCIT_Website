@@ -36,7 +36,7 @@ const Achievements = () => {
         <div className="mt-14 flex justify-center">
           <Link
             to="/achievements"
-            className="inline-flex items-center gap-2 rounded-full border border-[#00A8FF]/40 bg-[#00A8FF]/10 px-7 py-3 text-sm font-bold text-[#00D2FF] transition-all duration-300 hover:scale-105 hover:bg-[#00A8FF] hover:text-black hover:shadow-[0_0_25px_rgba(0,168,255,0.4)]"
+            className="inline-flex items-center gap-2 rounded-full border px-7 py-3 text-sm font-bold transition-all duration-300 hover:scale-105 hover:bg-[#00A8FF] hover:text-black hover:shadow-[0_0_25px_rgba(0,168,255,0.4)] border-cyan-500/40 bg-cyan-500/10 font-mono text-cyan-700  mb-4 dark:shadow-lg"
           >
             View All Achievements
             <ArrowRight size={16} />

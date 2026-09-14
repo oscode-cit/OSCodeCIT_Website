@@ -31,8 +31,8 @@ export default function Hero() {
             className="lg:col-span-6 flex flex-col items-start text-left"
           >
             {/* Top Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/40 bg-cyan-500/10 px-4 py-1.5 font-mono text-xs font-bold text-cyan-700 dark:text-cyan-300 mb-4 shadow-lg shadow-cyan-500/10 mb-6">
-              <Terminal size={14} className="text-cyan-400 animate-pulse" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/40 bg-cyan-500/10 px-4 py-1.5 font-mono text-xs font-bold text-cyan-700 dark:text-cyan-300 mb-4 shadow-lg shadow-cyan-500/10">
+              <Terminal size={14} className="dark:text-cyan-400 text-cyan-700 animate-pulse" />
               <span>OSCODE CIT CHAPTER • 2026</span>
             </div>
 
@@ -62,15 +62,15 @@ export default function Hero() {
 
               <Link
                 to="/team"
-                className="inline-flex items-center gap-2 rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-6 py-3 text-sm font-bold text-cyan-300 hover:border-cyan-400 hover:bg-cyan-500/20 hover:text-white transition active:scale-95 shadow-md backdrop-blur-md"
+                className="inline-flex items-center gap-2 rounded-xl border bg-cyan-500/10 px-6 py-3 text-sm text-cyan-700 hover:border-cyan-400 hover:bg-cyan-500/20  transition active:scale-95 shadow-md backdrop-blur-md font-mono dark:shadow-lg border-cyan-500/30 font-bold dark:text-cyan-300"
               >
-                <Sparkles size={16} className="text-cyan-400" />
+                <Sparkles size={16} className="text-cyan-700 dark:text-cyan-300" />
                 <span>Meet Team Tree</span>
               </Link>
 
               <Link
                 to="/events"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-bold text-slate-300 hover:border-white/30 hover:bg-white/10 hover:text-white transition active:scale-95"
+                className="inline-flex items-center gap-2 rounded-xl border dark:border-white/15 bg-white/5 px-5 py-3 text-sm font-bold hover:border-white/30 hover:bg-white/10 hover:text-white transition active:scale-95    dark:text-slate-300 text-slate-600"
               >
                 <span>View Events</span>
               </Link>
@@ -79,16 +79,16 @@ export default function Hero() {
             {/* Quick Stats Banner */}
             <div className="mt-10 pt-6 border-t border-white/10 grid grid-cols-3 gap-6 w-full max-w-lg">
               <div>
-                <div className="font-mono text-2xl font-black text-cyan-400">{event.length -1}+</div>
-                <div className="text-xs text-slate-400 mt-0.5">Events Hosted</div>
+                <div className="font-mono text-2xl font-black text-cyan-700">{event.length -1}+</div>
+                <div className="text-xs dark:text-slate-400 text-slate-600 mt-0.5">Events Hosted</div>
               </div>
               <div>
-                <div className="font-mono text-2xl font-black text-cyan-400">{team.length - 1}+</div>
-                <div className="text-xs text-slate-400 mt-0.5">Club Members</div>
+                <div className="font-mono text-2xl font-black text-cyan-700">{team.length - 1}+</div>
+                <div className="text-xs dark:text-slate-400 text-slate-600 mt-0.5">Club Members</div>
               </div>
               <div>
-                <div className="font-mono text-2xl font-black text-cyan-400">{projects.length -1}+</div>
-                <div className="text-xs text-slate-400 mt-0.5">Major Projects</div>
+                <div className="font-mono text-2xl font-black text-cyan-700">{projects.length -1}+</div>
+                <div className="text-xs dark:text-slate-400 text-slate-600 mt-0.5">Major Projects</div>
               </div>
             </div>
           </motion.div>

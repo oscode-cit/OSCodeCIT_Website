@@ -61,7 +61,7 @@ const FeaturedEvents = () => {
         <div className="mt-16 w-full overflow-hidden">
           <Marquee pauseOnHover className="[--duration:40s] [--gap:3.5rem]">
             {events.map((event) => (
-              <div key={event.id} className="w-[350px] sm:w-[380px] shrink-0">
+              <div key={event.id} className="w-87.5 sm:w-95 shrink-0">
                 <EventCard event={event} onCardClick={() => handleOpenModal(event)} />
               </div>
             ))}

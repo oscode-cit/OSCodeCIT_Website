@@ -35,7 +35,7 @@ const AchievementsPage = () => {
                 className={`rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition-all ${
                   selectedCategory === cat
                     ? "bg-[#00A8FF] text-black font-bold shadow-lg shadow-[#00A8FF]/25"
-                    : "bg-white/[0.04] dark:text-slate-300 text-slate-600 hover:bg-white/10 border border-white/10"
+                    : "bg-white/4 dark:text-slate-300 text-slate-600 hover:bg-white/10 border border-white/10"
                 }`}
               >
                 {cat}

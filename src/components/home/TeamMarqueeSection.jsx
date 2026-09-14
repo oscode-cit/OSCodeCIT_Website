@@ -15,8 +15,8 @@ export default function TeamMarqueeSection() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-cyan-500/10 blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-4 mb-8 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 font-mono text-xs font-bold text-cyan-300 mb-3">
-          <Users size={14} className="text-cyan-400" />
+        <div className="inline-flex items-center gap-2 rounded-full border bg-cyan-500/10 px-4 py-1.5 font-bold text-xs dark:text-cyan-300 mb-3 border-cyan-500/40 text-cyan-700 dark:shadow-lg">
+          <Users size={14} className="dark:text-cyan-400 text-cyan-700" />
           <span>OSCode CIT Builders & Leads</span>
         </div>
         <h2 className="text-3xl sm:text-4xl font-extrabold dark:text-white text-slate-900 tracking-tight">
@@ -50,7 +50,7 @@ export default function TeamMarqueeSection() {
       <div className="mt-8 text-center">
         <Link
           to="/team"
-          className="inline-flex items-center gap-2 rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-6 py-2.5 text-xs font-bold text-cyan-300 hover:border-cyan-400 hover:bg-cyan-500/20 hover:text-white transition active:scale-95 shadow-lg shadow-cyan-500/10"
+          className="inline-flex items-center gap-2 rounded-xl border border-cyan-500/40 bg-cyan-500/10 px-6 py-2.5 text-xs  text-cyan-700 hover:border-cyan-400 hover:bg-cyan-500/20 hover:text-white transition active:scale-95 shadow-lg shadow-cyan-500/10 font-mono font-bold  mb-4 dark:shadow-lg"
         >
           <Sparkles size={15} />
           <span>Explore Interactive Team Tree View</span>
