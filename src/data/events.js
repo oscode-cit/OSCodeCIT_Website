@@ -199,6 +199,46 @@ const events = [
     description:
       "Deep dive into advanced defense research, autonomous systems, electronics, and aerospace manufacturing.",
   },
+  {
+  id: 10,
+  title: "Decode SIH 2026",
+  date: "05 Sept 2026",
+  venue: "Cambridge Institute of Technology, Bengaluru",
+  address: "Cambridge Institute of Technology, Bengaluru",
+  location: "Cambridge Institute of Technology, Bengaluru, Karnataka",
+
+  images: [
+    "/images/events/decodesih-2026/decodesih26-1.webp",
+    "/images/events/decodesih-2026/decodesih26-2.webp",
+    "/images/events/decodesih-2026/decodesih26-3.webp",
+    "/images/events/decodesih-2026/decodesih26-4.webp",
+    "/images/events/decodesih-2026/decodesih26-5.webp",
+    "/images/events/decodesih-2026/decodesih26-6.webp",
+    "/images/events/decodesih-2026/decodesih26-7.webp",
+    "/images/events/decodesih-2026/decodesih26-8.webp",
+    "/images/events/decodesih-2026/decodesih26-9.webp",
+    "/images/events/decodesih-2026/decodesih26-10.webp",
+    "/images/events/decodesih-2026/decodesih26-11.webp",
+    "/images/events/decodesih-2026/decodesih26-12.webp",
+    "/images/events/decodesih-2026/decodesih26-13.webp",
+    "/images/events/decodesih-2026/decodesih26-14.webp",
+    "/images/events/decodesih-2026/decodesih26-15.webp",
+    "/images/events/decodesih-2026/decodesih26-16.webp",
+    "/images/events/decodesih-2026/decodesih26-17.webp",
+  ],
+
+  about:
+    "Decode SIH 2026 was a technology and innovation-focused event conducted at Cambridge Institute of Technology, Bengaluru, bringing together students to explore problem-solving, emerging technologies, and innovation in preparation for the Smart India Hackathon.",
+
+  participation:
+    "OSCode CIT members contributed to the successful conduct of Decode SIH 2026 by supporting the event as student volunteers and organizers, assisting with event coordination, participant management, and other on-ground activities.",
+
+  outcome:
+    "The event provided students with an opportunity to engage with the hackathon ecosystem, collaborate on real-world problem statements, and gain exposure to innovation and technology-driven problem solving. The involvement of OSCode CIT members also strengthened the club's role in organizing and supporting technology-focused initiatives on campus.",
+
+  description:
+    "A campus-hosted technology and innovation event organized to foster hackathon culture, student collaboration, and problem-solving, with OSCode CIT members contributing as volunteers and organizers.",
+},
 ];
 
 export default events;

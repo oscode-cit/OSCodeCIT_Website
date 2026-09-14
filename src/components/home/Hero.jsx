@@ -1,65 +1,114 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-import Container from "../common/Container";
-import PrimaryButton from "../common/PrimaryButton";
-import SecondaryButton from "../common/SecondaryButton";
-import GradientText from "../common/GradientText";
+import { Link } from "react-router-dom";
+import { Terminal, ArrowRight, Sparkles, Code2, Users, Trophy } from "lucide-react";
+import EventShuffleCarousel from "./EventShuffleCarousel";
+import team from "../../data/team"
+import event from "../../data/events"
+import {projects} from "../../data/projects"
 
-const Hero = () => {
-  const navigate = useNavigate();
-
+export default function Hero() {
   return (
-    <section className="relative min-h-[82vh] flex items-center justify-center pt-32 pb-20 overflow-hidden">
-      <div className="absolute inset-0 bg-dot-grid opacity-50 pointer-events-none" />
+    <section className="relative min-h-[90vh] pt-28 pb-16 overflow-hidden flex items-center">
+      {/* 45-degree Dynamic Split Background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* 45 degree diagonal gradient slice */}
+        <div
+          className="absolute -top-[20%] -right-[10%] w-[80%] h-[140%] opacity-20 dark:opacity-25 bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-900 blur-[80px]"
+          style={{ transform: "rotate(-45deg)" }}
+        />
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 bg-dot-grid opacity-30" />
+      </div>
 
-      <Container className="relative z-10">
-        <motion.div
-          className="mx-auto max-w-4xl flex flex-col items-center text-center"
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-        >
-          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-400/10 px-4 py-1.5 backdrop-blur-md">
-            <Sparkles className="h-4 w-4 text-cyan-400" />
-            <span className="text-[11px] font-semibold uppercase tracking-widest text-cyan-300 sm:text-xs">
-              Imagine • Innovate • Build
-            </span>
-          </div>
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          {/* Left Column (Text, Buttons, Badges) */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="lg:col-span-6 flex flex-col items-start text-left"
+          >
+            {/* Top Badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/40 bg-cyan-500/10 px-4 py-1.5 font-mono text-xs font-bold text-cyan-700 dark:text-cyan-300 mb-4 shadow-lg shadow-cyan-500/10 mb-6">
+              <Terminal size={14} className="text-cyan-400 animate-pulse" />
+              <span>OSCODE CIT CHAPTER • 2026</span>
+            </div>
 
-          <h1 className="mt-7 text-4xl font-black tracking-tight leading-[1.15] sm:mt-8 sm:text-6xl sm:leading-[1.1] lg:text-7xl">
-            Empowering Developers Through Open Source{" "}
-            <GradientText className="block sm:inline">OSCode CIT</GradientText>
-          </h1>
+            {/* Main Headline */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black dark:text-white text-slate-900 tracking-tight leading-[1.1]">
+              Open Source.<br />
+              <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 bg-clip-text text-transparent">
+                Real Engineering.
+              </span><br />
+              Zero Boundaries.
+            </h1>
 
-          <p className="mt-5 max-w-2xl text-base text-slate-300 leading-relaxed sm:mt-6 sm:text-xl">
-            The premier open-source and developer community of Cambridge
-            Institute of Technology. Fostering real-world engineering, open
-            collaboration, and technical leadership.
-          </p>
+            {/* Subtext */}
+            <p className="mt-5 text-base sm:text-lg dark:text-slate-300 text-slate-600 leading-relaxed max-w-xl">
+              The official open-source student developer community at Cambridge Institute of Technology, Bangalore. We build production-ready platforms, compete in national hackathons, and foster tech leadership.
+            </p>
 
-          <div className="mt-6 flex items-center gap-2 rounded-lg border border-white/10 bg-black/40 px-4 py-2 font-mono text-[11px] text-cyan-300/80 sm:text-xs">
-            <span className="text-violet-400">$</span>
-            <span>building the future, one commit at a time</span>
-            <span className="ml-0.5 inline-block h-3.5 w-[2px] animate-pulse bg-cyan-300" />
-          </div>
+            {/* CTA Buttons */}
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link
+                to="/projects"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3 text-sm font-bold text-black shadow-lg shadow-cyan-500/30 transition hover:from-cyan-400 hover:to-blue-500 active:scale-95"
+              >
+                <span>Explore Projects</span>
+                <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+              </Link>
 
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <PrimaryButton
-              onClick={() => navigate("/events")}
-              className="flex items-center gap-2"
-            >
-              Explore Events
-              <ArrowRight size={18} />
-            </PrimaryButton>
-            <SecondaryButton onClick={() => navigate("/team")}>
-              Meet the Team
-            </SecondaryButton>
-          </div>
-        </motion.div>
-      </Container>
+              <Link
+                to="/team"
+                className="inline-flex items-center gap-2 rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-6 py-3 text-sm font-bold text-cyan-300 hover:border-cyan-400 hover:bg-cyan-500/20 hover:text-white transition active:scale-95 shadow-md backdrop-blur-md"
+              >
+                <Sparkles size={16} className="text-cyan-400" />
+                <span>Meet Team Tree</span>
+              </Link>
+
+              <Link
+                to="/events"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-bold text-slate-300 hover:border-white/30 hover:bg-white/10 hover:text-white transition active:scale-95"
+              >
+                <span>View Events</span>
+              </Link>
+            </div>
+
+            {/* Quick Stats Banner */}
+            <div className="mt-10 pt-6 border-t border-white/10 grid grid-cols-3 gap-6 w-full max-w-lg">
+              <div>
+                <div className="font-mono text-2xl font-black text-cyan-400">{event.length -1}+</div>
+                <div className="text-xs text-slate-400 mt-0.5">Events Hosted</div>
+              </div>
+              <div>
+                <div className="font-mono text-2xl font-black text-cyan-400">{team.length - 1}+</div>
+                <div className="text-xs text-slate-400 mt-0.5">Club Members</div>
+              </div>
+              <div>
+                <div className="font-mono text-2xl font-black text-cyan-400">{projects.length -1}+</div>
+                <div className="text-xs text-slate-400 mt-0.5">Major Projects</div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Column (Animated Picture Shuffle / Event Carousel) */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+            className="lg:col-span-6 relative"
+          >
+            {/* Background Glow */}
+            <div className="absolute -inset-2 rounded-3xl bg-linear-to-r from-cyan-500 to-blue-600 opacity-20 blur-xl" />
+            
+            {/* Event Picture Shuffle Carousel */}
+            <EventShuffleCarousel />
+          </motion.div>
+
+        </div>
+      </div>
     </section>
   );
-};
-
-export default Hero;
+}

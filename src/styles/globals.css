@@ -1,16 +1,21 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:is(.dark *));
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    @apply font-sans;
   }
 
   body {
     font-family: "Inter", sans-serif;
-    background-color: #060b18;
-    color: #ffffff;
     overflow-x: hidden;
     min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   button,
@@ -20,91 +25,58 @@
   }
 }
 
-/* Background grid patterns */
+/* Base Body Colors */
+html.dark body {
+  background-color: #060b18;
+  color: #ffffff;
+}
+
+html:not(.dark) body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Background Mesh */
+html.dark .site-bg-mesh {
+  background-color: #000000;
+  background-image: radial-gradient(rgba(0, 168, 255, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+html:not(.dark) .site-bg-mesh {
+  background-color: #f1f5f9;
+  background-image: radial-gradient(rgba(0, 168, 255, 0.18) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Grid Patterns */
 .bg-dot-grid {
   background-size: 32px 32px;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(0, 168, 255, 0.15) 1px, transparent 1px);
 }
 
-.site-bg-oscode {
-  background-color: #060b18;
-  background-image: 
-    radial-gradient(at 15% 15%, rgba(0, 168, 255, 0.18) 0px, transparent 50%),
-    radial-gradient(at 85% 20%, rgba(0, 210, 255, 0.12) 0px, transparent 45%),
-    radial-gradient(at 50% 70%, rgba(0, 122, 255, 0.08) 0px, transparent 60%),
-    radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px;
-}
-
-.site-bg-mesh {
-  background-color: #080d21;
-  background-image: 
-    radial-gradient(at 15% 15%, rgba(6, 182, 212, 0.14) 0px, transparent 50%),
-    radial-gradient(at 85% 20%, rgba(99, 102, 241, 0.14) 0px, transparent 50%),
-    radial-gradient(at 50% 60%, rgba(14, 165, 233, 0.08) 0px, transparent 60%),
-    radial-gradient(at 80% 85%, rgba(168, 85, 247, 0.12) 0px, transparent 50%),
-    radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 36px 36px;
-}
-
-/* Terminal component utility headers */
-.terminal-header {
-  height: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 8px;
-  padding: 0;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.red {
-  background: #ef4444;
-}
-
-.yellow {
-  background: #eab308;
-}
-
-.green {
-  background: #22c55e;
-}
-
-/* ============================================================
-   Cooler-pass additions — purely additive, nothing above is
-   changed. Animated accents + small mobile-safety helpers.
-   ============================================================ */
-
-/* Prevents the ambient blur orbs (BackgroundGlow) from ever
-   introducing a horizontal scrollbar on narrow phones. */
 html, body {
   max-width: 100vw;
 }
 
-/* Slimmer, on-brand scrollbar so the "IDE" feel holds up
-   past the fold too. */
+/* On-brand scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
-::-webkit-scrollbar-track {
-  background: #060b18;
+html.dark ::-webkit-scrollbar-track {
+  background: #000717;
 }
-::-webkit-scrollbar-thumb {
-  background: #16233f;
-  border-radius: 999px;
-  border: 2px solid #060b18;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #1e3357;
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: #e2e8f0;
 }
 
-/* Animated gradient sweep for GradientText — same colors,
-   just given motion so headlines feel alive instead of static. */
+::-webkit-scrollbar-thumb {
+  background: #0ea1e4;
+  border-radius: 1000px;
+  border: 2px solid transparent;
+}
+
+/* Animated gradient sweep for headlines */
 @keyframes text-shimmer {
   0% { background-position: 0% 50%; }
   100% { background-position: 200% 50%; }
@@ -114,7 +86,7 @@ html, body {
   animation: text-shimmer 4s linear infinite;
 }
 
-/* Light-sweep used on PrimaryButton for a small "cooler" hover cue. */
+/* Light-sweep for buttons */
 @keyframes btn-sheen {
   0% { transform: translateX(-120%) skewX(-15deg); }
   100% { transform: translateX(220%) skewX(-15deg); }
@@ -140,33 +112,27 @@ html, body {
   animation: btn-sheen 0.9s ease forwards;
 }
 
-/* Faint scanline wash for the whole page — reinforces the
-   editor/terminal identity at very low opacity so it never
-   competes with content or hurts contrast/readability. */
-.scanline-overlay {
-  background-image: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.025) 0px,
-    rgba(255, 255, 255, 0.025) 1px,
-    transparent 1px,
-    transparent 3px
-  );
-}
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: 'Geist Variable', sans-serif;
+  --animate-marquee: marquee var(--duration) linear infinite;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
 
-@media (prefers-reduced-motion: reduce) {
-  .text-shimmer,
-  .btn-sheen::after {
-    animation: none !important;
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
   }
-}
 
-/* Safe-area padding for notch/pill-camera phones, now that the
-   viewport meta opts into viewport-fit=cover. Additive only —
-   falls back to 0 on devices without a safe-area inset. */
-header {
-  padding-top: env(safe-area-inset-top, 0px);
-}
-body {
-  padding-left: env(safe-area-inset-left, 0px);
-  padding-right: env(safe-area-inset-right, 0px);
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
 }

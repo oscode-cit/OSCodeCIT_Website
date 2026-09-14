@@ -9,7 +9,7 @@ const SectionHeading = ({ badge, title, description }) => {
         {title}
       </h2>
 
-      <p className="mt-5 text-sm leading-7 text-gray-400 sm:mt-6 sm:text-base sm:leading-8">
+      <p className="mt-5 text-sm leading-7 dark:text-slate-300 text-slate-600 sm:mt-6 sm:text-base sm:leading-8">
         {description}
       </p>
     </div>

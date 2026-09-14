@@ -14,8 +14,8 @@ const Achievements = () => {
       <Container>
         <SectionHeading
           badge="Milestones & Recognition"
-          title="Hackathon Wins & Highlights"
-          description="Key milestones, hackathon awards, and accomplishments by OSCode CIT members."
+          title="Awards & Community Recognitions"
+          description="Key milestones, 'Best Lab Idea' awards, industry delegations, and member placement achievements at OSCode CIT."
         />
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 items-stretch">

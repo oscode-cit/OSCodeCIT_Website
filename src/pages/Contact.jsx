@@ -19,10 +19,10 @@ const Contact = () => {
     const recipient = "oscodecit@cambridge.edu.in";
     const emailSubject = encodeURIComponent(formData.subject || "Inquiry for OSCode CIT");
     const emailBody = encodeURIComponent(
-      `Hi OSCode CIT Team,\n\n${formData.message}\n\nBest regards,\n${formData.name}`
+      `Hi OSCode CIT Team,\n\n\({formData.message}\n\nBest regards,\n\){formData.name}`
     );
 
-    window.location.href = `mailto:${recipient}?subject=${emailSubject}&body=${emailBody}`;
+    window.location.href = `mailto:\({recipient}?subject=\){emailSubject}&body=${emailBody}`;
   };
 
   return (
@@ -32,10 +32,10 @@ const Contact = () => {
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <SectionBadge>Get In Touch</SectionBadge>
-          <h1 className="mt-4 text-4xl sm:text-6xl font-black text-white tracking-tight">
+          <h1 className="mt-4 text-4xl sm:text-6xl font-black dark:text-white text-slate-900 tracking-tight">
             Let’s Build <GradientText>Together</GradientText>
           </h1>
-          <p className="mt-4 text-base sm:text-lg text-slate-300">
+          <p className="mt-4 text-base sm:text-lg dark:text-slate-300 text-slate-600">
             Have an idea for a workshop, open-source project, or want to collaborate with our club?
           </p>
         </div>
@@ -47,18 +47,18 @@ const Contact = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="rounded-3xl border border-white/15 bg-gradient-to-b from-[#131d3b]/90 to-[#0d1428]/95 p-5 sm:p-7 backdrop-blur-xl">
+            <div className="rounded-3xl border dark:border-white/15 border-slate-200 dark:bg-[#050505]/95 bg-white p-5 sm:p-7 backdrop-blur-xl shadow-sm dark:shadow-none hover:border-slate-300">
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-400/10 border border-cyan-400/20 text-cyan-400">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-500/10 border border-cyan-400/20 text-cyan-600 dark:text-cyan-400">
                   <Mail size={22} />
                 </div>
                 <div>
-                  <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                  <h3 className="text-xs font-semibold uppercase tracking-wider dark:text-slate-400 text-slate-500">
                     Official Email
                   </h3>
                   <a
                     href="mailto:oscodecit@cambridge.edu.in"
-                    className="mt-1 block text-base sm:text-lg font-bold text-white hover:text-cyan-300 transition break-all"
+                    className="mt-1 block text-base sm:text-lg font-bold dark:text-white text-slate-900 hover:text-cyan-500 transition break-all"
                   >
                     oscodecit@cambridge.edu.in
                   </a>
@@ -66,27 +66,27 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-white/15 bg-gradient-to-b from-[#131d3b]/90 to-[#0d1428]/95 p-5 sm:p-7 backdrop-blur-xl">
+            <div className="rounded-3xl border dark:border-white/15 border-slate-200 dark:bg-[#050505]/95 bg-white p-5 sm:p-7 backdrop-blur-xl shadow-sm dark:shadow-none hover:border-slate-300">
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-violet-400/10 border border-violet-400/20 text-violet-400">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-violet-500/10 border border-violet-400/20 text-violet-600 dark:text-violet-400">
                   <MapPin size={22} />
                 </div>
                 <div>
-                  <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                  <h3 className="text-xs font-semibold uppercase tracking-wider dark:text-slate-400 text-slate-500">
                     Campus Location
                   </h3>
-                  <p className="mt-1 text-base font-bold text-white">
+                  <p className="mt-1 text-base font-bold dark:text-white text-slate-900">
                     Cambridge Institute of Technology
                   </p>
-                  <p className="text-xs text-slate-300 mt-0.5">
+                  <p className="text-xs dark:text-slate-300 text-slate-600 mt-0.5">
                     SMV Block Auditorium, Bengaluru, Karnataka
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-3xl border border-white/15 bg-gradient-to-b from-[#131d3b]/90 to-[#0d1428]/95 p-5 sm:p-7 backdrop-blur-xl">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+            <div className="rounded-3xl border dark:border-white/10 border-slate-200 dark:bg-[#050505]/95 bg-white p-5 sm:p-7 backdrop-blur-xl shadow-sm dark:shadow-none hover:border-slate-300">
+              <h3 className="text-xs font-semibold uppercase tracking-wider dark:text-slate-400 text-slate-500">
                 Official Channels
               </h3>
 
@@ -95,7 +95,7 @@ const Contact = () => {
                   href="https://github.com/oscode-cit"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex flex-col items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 p-4 text-white transition-all duration-300 hover:-translate-y-1 hover:border-white/40 hover:bg-white/15"
+                  className="flex flex-col items-center justify-center gap-2 rounded-2xl border dark:border-white/10 border-slate-200 dark:bg-white/5 bg-slate-50 dark:text-white text-slate-800 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500 shadow-xs"
                 >
                   <FaGithub size={22} />
                   <span className="text-xs font-semibold">GitHub</span>
@@ -105,7 +105,7 @@ const Contact = () => {
                   href="https://www.linkedin.com/company/oscodecit/"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex flex-col items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 p-4 text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/50 hover:bg-cyan-500/10 hover:text-cyan-300"
+                  className="flex flex-col items-center justify-center gap-2 rounded-2xl border dark:border-white/10 border-slate-200 dark:bg-white/5 bg-slate-50 text-blue-600 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 shadow-xs"
                 >
                   <FaLinkedin size={22} />
                   <span className="text-xs font-semibold">LinkedIn</span>
@@ -115,7 +115,7 @@ const Contact = () => {
                   href="https://www.instagram.com/oscodecit"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex flex-col items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 p-4 text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-pink-400/50 hover:bg-pink-500/10 hover:text-pink-300"
+                  className="flex flex-col items-center justify-center gap-2 rounded-2xl border dark:border-white/10 border-slate-200 dark:bg-white/5 bg-slate-50 text-pink-600 transition-all duration-300 hover:-translate-y-1 hover:border-pink-400 shadow-xs"
                 >
                   <FaInstagram size={22} />
                   <span className="text-xs font-semibold">Instagram</span>
@@ -130,18 +130,18 @@ const Contact = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="rounded-3xl border border-white/15 bg-gradient-to-b from-[#131d3b]/90 to-[#0d1428]/95 p-8 sm:p-10 backdrop-blur-xl shadow-2xl">
+            <div className="rounded-3xl border dark:border-white/15 border-slate-200 dark:bg-[#050505]/95 bg-white p-8 sm:p-10 backdrop-blur-xl shadow-xl dark:shadow-2xl">
               <div className="flex items-center gap-3">
-                <MessageSquare className="text-cyan-400" size={22} />
-                <h2 className="text-2xl font-bold text-white">Compose a Message</h2>
+                <MessageSquare className="text-cyan-500 dark:text-cyan-400" size={22} />
+                <h2 className="text-2xl font-bold dark:text-white text-slate-900">Compose a Message</h2>
               </div>
-              <p className="mt-2 text-sm text-slate-300">
+              <p className="mt-2 text-sm dark:text-slate-300 text-slate-600">
                 Write your message below. Clicking send will open your Gmail/email client with everything filled out.
               </p>
 
               <form onSubmit={handleSendEmail} className="mt-8 space-y-5">
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                  <label className="block text-xs font-semibold uppercase tracking-wider dark:text-slate-300 text-slate-700 mb-2">
                     Your Name
                   </label>
                   <input
@@ -150,12 +150,12 @@ const Contact = () => {
                     placeholder="e.g. Alex Sharma"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3.5 text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:bg-white/10"
+                    className="w-full rounded-xl border dark:border-white/15 border-slate-300 dark:bg-white/5 bg-slate-50 px-4 py-3.5 text-sm dark:text-white text-slate-900 placeholder-slate-400 outline-none transition focus:border-cyan-500 focus:bg-transparent"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                  <label className="block text-xs font-semibold uppercase tracking-wider dark:text-slate-300 text-slate-700 mb-2">
                     Subject / Topic
                   </label>
                   <input
@@ -164,12 +164,12 @@ const Contact = () => {
                     placeholder="e.g. Workshop Collaboration / Club Inquiry"
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3.5 text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:bg-white/10"
+                    className="w-full rounded-xl border dark:border-white/15 border-slate-300 dark:bg-white/5 bg-slate-50 px-4 py-3.5 text-sm dark:text-white text-slate-900 placeholder-slate-400 outline-none transition focus:border-cyan-500 focus:bg-transparent"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                  <label className="block text-xs font-semibold uppercase tracking-wider dark:text-slate-300 text-slate-700 mb-2">
                     Message
                   </label>
                   <textarea
@@ -178,13 +178,13 @@ const Contact = () => {
                     placeholder="Type your message or proposal..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3.5 text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400 focus:bg-white/10 resize-none"
+                    className="w-full rounded-xl border dark:border-white/15 border-slate-300 dark:bg-white/5 bg-slate-50 px-4 py-3.5 text-sm dark:text-white text-slate-900 placeholder-slate-400 outline-none transition focus:border-cyan-500 focus:bg-transparent resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-linear-to-r from-cyan-400 via-blue-500 to-indigo-500 py-4 font-bold text-slate-950 transition-all duration-300 hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] hover:scale-[1.01]"
+                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 py-4 font-bold text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] hover:scale-[1.01]"
                 >
                   <Send size={18} />
                   Open in Gmail / Email Client

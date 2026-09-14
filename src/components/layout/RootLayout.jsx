@@ -1,20 +1,23 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import BackgroundGlow from "../common/BackgroundGlow";
 import ScrollToTop from "./ScrollToTop";
+import Preloader from "../common/Preloader";
+import { ThemeProvider } from "../../context/ThemeContext";
 
 const RootLayout = () => {
   return (
-    <div className="site-bg-mesh min-h-screen flex flex-col justify-between selection:bg-cyan-400 selection:text-slate-950">
-      <ScrollToTop />
-      <BackgroundGlow />
-      <Navbar />
-      <main className="grow">
-        <Outlet />
-      </main>
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="site-bg-mesh min-h-screen flex flex-col justify-between selection:bg-cyan-400 selection:text-slate-950 transition-colors duration-300">
+        <Preloader />
+        <ScrollToTop />
+        <Navbar />
+        <main className="grow">
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 };
 

@@ -2,8 +2,8 @@ export const achievements = [
   {
     id: "techsync-best-lab",
     name: "Microsoft TechSync 2026",
-    badge: "Hackathon Winner",
-    category: "Hackathon",
+    badge: "Best Lab Idea Award",
+    category: "Lab Recognition",
     role: "OSCode CIT Project Team",
     metric: "1st Place",
     metricLabel: "Best Lab Idea",
@@ -17,7 +17,7 @@ export const achievements = [
       "Selected as Best Lab Idea among inter-college technical contenders",
       "Recognized for innovation in collaborative developer tooling"
     ],
-    tags: ["Hackathon Winner", "Microsoft TechSync", "Innovation"],
+    tags: ["Best Lab Idea", "Microsoft TechSync", "Innovation Award"],
   },
   {
     id: "bts-futurise-delegation",
@@ -41,9 +41,9 @@ export const achievements = [
   },
   {
     id: "yamini-career-milestone",
-    name: "Yamini",
+    name: "Yamini — Engineering Direct Hire",
     badge: "Alumni Milestone",
-    category: "Alumni",
+    category: "Individual Achievement",
     role: "OSCode CIT Alumna • Batch 2025–2026",
     metric: "Direct Hire",
     metricLabel: "Engineering Offer",
@@ -57,6 +57,26 @@ export const achievements = [
       "Active alumni mentor for open-source initiatives and coding tracks",
       "Demonstrated excellence in algorithmic and system design"
     ],
-    tags: ["Direct Recruitment", "Software Engineering", "Alumni Milestone"],
+    tags: ["Direct Recruitment", "Software Engineering", "Individual Winner"],
+  },
+  {
+    id: "drone-workshop-excellence",
+    name: "NMIT Drone Technical Excellence",
+    badge: "Technical Mentorship",
+    category: "Workshop Award",
+    role: "OSCode Hardware & Drone Team",
+    metric: "Excellence",
+    metricLabel: "Facilitator Award",
+    image: "/images/events/first-drone-workshop-2026/drone-workshop-1.webp",
+    description:
+      "Recognized by Nitte Meenakshi Institute of Technology for exemplary technical delivery and hands-on facilitation during the Drone Hardware & Calibration Workshop.",
+    fullDetails:
+      "OSCode hardware leads trained over 80+ participants on flight controller parameters, ESC tuning, and telemetry signal debugging, earning special recognition from NMIT event chairs.",
+    highlights: [
+      "Hands-on mentoring of 80+ student drone builders",
+      "Zero-fault flight demonstration during live arena testing",
+      "Inter-college technical collaboration accolade"
+    ],
+    tags: ["Hardware", "Drone Tech", "Mentorship"],
   },
 ];

@@ -20,10 +20,10 @@ const AchievementsPage = () => {
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <SectionBadge>Hall of Fame</SectionBadge>
-          <h1 className="mt-4 text-4xl sm:text-5xl font-black text-white tracking-tight">
+          <h1 className="mt-4 text-4xl sm:text-5xl font-black dark:text-white text-slate-900 tracking-tight">
             All Achievements & Awards
           </h1>
-          <p className="mt-3 text-sm sm:text-base text-slate-300">
+          <p className="mt-3 text-sm sm:text-base dark:text-slate-300 text-slate-600">
             A comprehensive record of hackathons won, summits represented, and career milestones.
           </p>
 
@@ -35,7 +35,7 @@ const AchievementsPage = () => {
                 className={`rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition-all ${
                   selectedCategory === cat
                     ? "bg-[#00A8FF] text-black font-bold shadow-lg shadow-[#00A8FF]/25"
-                    : "bg-white/[0.04] text-slate-300 hover:bg-white/10 border border-white/10"
+                    : "bg-white/[0.04] dark:text-slate-300 text-slate-600 hover:bg-white/10 border border-white/10"
                 }`}
               >
                 {cat}
