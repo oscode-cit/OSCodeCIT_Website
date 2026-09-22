@@ -6,6 +6,7 @@ import NeonFrame from "../components/common/NeonFrame";
 import ProjectCard from "../components/projects/ProjectCard";
 import EventCard from "../components/events/EventCard";
 import AchievementCard from "../components/achievements/AchievementCard";
+import EngineeringCulture from "../components/home/EngineeringCulture";
 import { projects } from "../data/projects";
 import events from "../data/events";
 import { achievements } from "../data/achievements";
@@ -41,5 +42,7 @@ export default function Home() {
         <div className="home-frame-link"><Link to="/achievements">View All Achievements <ArrowRight size={15}/></Link></div>
       </NeonFrame>
     </Container>
+    {/* Engineering Culture Section */}
+      <EngineeringCulture />
   </main>;
 }
