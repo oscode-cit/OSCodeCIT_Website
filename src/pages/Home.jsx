@@ -10,7 +10,7 @@ import EngineeringCulture from "../components/home/EngineeringCulture";
 import { projects } from "../data/projects";
 import events from "../data/events";
 import { achievements } from "../data/achievements";
-import team from "../data/team";
+import team from "../data/teamData";
 
 function Stat({ Icon, value, label }) {
   return (
@@ -69,6 +69,7 @@ export default function Home() {
           </div>
         </NeonFrame>
 
+<<<<<<< HEAD
         <NeonFrame
           eyebrow="RECOGNITION"
           title="Achievements & Milestones"
@@ -93,3 +94,15 @@ export default function Home() {
     </main>
   );
 }
+=======
+      <NeonFrame eyebrow="RECOGNITION" title="Achievements & Milestones" description="Recognition earned through technical work, industry exposure, mentorship, and community contribution." className="home-section-frame">
+        <div className="future-grid three-col">{achievements.slice(0,3).map((item) => <AchievementCard key={item.id} item={item}/>)}</div>
+        <div className="home-frame-link"><Link to="/achievements">View All Achievements <ArrowRight size={15}/></Link></div>
+      </NeonFrame>
+    </Container>
+    
+    {/* Engineering Culture Section */}
+      <EngineeringCulture />
+  </main>;
+}
+>>>>>>> 0c775755d22cfc292884f18e5f55f8188aa1ab61
