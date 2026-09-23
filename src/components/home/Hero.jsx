@@ -602,7 +602,7 @@ export default function Hero() {
                     text-transparent
                   "
                 >
-                  {team.length - 1}+
+                  {20}+
                 </div>
 
                 <div className="mt-1 text-xs text-slate-400">
