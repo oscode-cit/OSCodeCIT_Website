@@ -57,7 +57,7 @@ export default function Home() {
 
           <Stat
             Icon={Users}
-            value={`${team.length}+`}
+            value={`20+`}
             label="Community Members"
           />
         </div>
