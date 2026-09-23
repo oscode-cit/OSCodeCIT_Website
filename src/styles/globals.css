@@ -1940,6 +1940,539 @@ a {
 
 
 /* =========================================================
+   FINAL EVENT CARD OVERFLOW FIX
+   ========================================================= */
+
+/*
+  The flip card must have a stable height.
+  Without this, the back face can grow beyond the
+  front face when its content is longer.
+*/
+
+.events-grid {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+
+  align-items: stretch;
+}
+
+/* ---------------------------------------------------------
+   GRID ITEM
+--------------------------------------------------------- */
+
+.events-grid .event-grid-item {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  height: 680px;
+
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------
+   OUTER EVENT CARD
+--------------------------------------------------------- */
+
+.events-grid .event-grid-item .future-card {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+/* ---------------------------------------------------------
+   ALL CHILDREN MUST RESPECT CARD WIDTH
+--------------------------------------------------------- */
+
+.events-grid .future-card *,
+.events-grid .future-card *::before,
+.events-grid .future-card *::after {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* ---------------------------------------------------------
+   CARD BODY
+--------------------------------------------------------- */
+
+.events-grid .future-card-body {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  flex: 1 1 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+/* ---------------------------------------------------------
+   FLIP CONTAINERS
+--------------------------------------------------------- */
+
+/*
+  These selectors cover common flip-card structures.
+  They keep the front and back faces inside the same
+  physical card area.
+*/
+
+.events-grid .future-card [class*="flip"],
+.events-grid .future-card [class*="Flip"],
+.events-grid .future-card [class*="card-inner"],
+.events-grid .future-card [class*="cardInner"],
+.events-grid .future-card [class*="card-front"],
+.events-grid .future-card [class*="card-back"],
+.events-grid .future-card [class*="cardFront"],
+.events-grid .future-card [class*="cardBack"] {
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* ---------------------------------------------------------
+   IMAGE
+--------------------------------------------------------- */
+
+.events-grid .event-image-wrap {
+  position: relative;
+
+  width: 100%;
+  height: 210px;
+  min-height: 210px;
+
+  flex: 0 0 210px;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+.events-grid .event-image-wrap img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: cover;
+}
+
+/* ---------------------------------------------------------
+   HEADINGS
+--------------------------------------------------------- */
+
+.events-grid .future-card h3 {
+  width: 100%;
+  max-width: 100%;
+
+  margin: 0;
+
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.2;
+
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* ---------------------------------------------------------
+   PARAGRAPHS
+--------------------------------------------------------- */
+
+.events-grid .future-card p {
+  width: 100%;
+  max-width: 100%;
+
+  margin: 8px 0 0;
+
+  font-size: 13px;
+  line-height: 1.55;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* ---------------------------------------------------------
+   META
+--------------------------------------------------------- */
+
+.events-grid .meta-line {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 7px;
+  margin-top: 9px;
+
+  font-size: 12px;
+  line-height: 1.45;
+
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.events-grid .meta-line span {
+  min-width: 0;
+  max-width: 100%;
+
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* ---------------------------------------------------------
+   CARD ACTIONS
+--------------------------------------------------------- */
+
+.events-grid .card-actions {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: auto;
+  padding-top: 14px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+/* ---------------------------------------------------------
+   BACK-SIDE CONTENT
+--------------------------------------------------------- */
+
+/*
+  THIS IS THE IMPORTANT PART.
+
+  The back content is allowed to scroll INSIDE the card
+  instead of increasing the card height or escaping it.
+*/
+
+.events-grid .future-card .back,
+.events-grid .future-card .card-back,
+.events-grid .future-card .flip-back,
+.events-grid .future-card .back-face,
+.events-grid .future-card [data-card-back] {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------
+   BACK-SIDE INNER CONTENT
+--------------------------------------------------------- */
+
+.events-grid .future-card .back-content,
+.events-grid .future-card .card-back-content,
+.events-grid .future-card .flip-back-content {
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  box-sizing: border-box;
+
+  scrollbar-width: thin;
+}
+
+/* ---------------------------------------------------------
+   BACK SIDE TEXT
+--------------------------------------------------------- */
+
+.events-grid .future-card .back p,
+.events-grid .future-card .card-back p,
+.events-grid .future-card .flip-back p {
+  max-width: 100%;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* ---------------------------------------------------------
+   ABOUT / OUTCOME BOXES
+--------------------------------------------------------- */
+
+.events-grid .future-card .modal-section,
+.events-grid .future-card .about-section,
+.events-grid .future-card .outcome-section {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------
+   BUTTON
+--------------------------------------------------------- */
+
+.events-grid .future-card button {
+  max-width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------------------------------------------------------
+   BADGES
+--------------------------------------------------------- */
+
+.events-grid .event-type,
+.events-grid .event-date {
+  max-width: calc(100% - 24px);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1250px) {
+  .events-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .events-grid .event-grid-item {
+    height: 680px;
+  }
+
+  .events-grid .event-image-wrap {
+    height: 200px;
+    min-height: 200px;
+    flex-basis: 200px;
+  }
+}
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+  .events-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .events-grid .event-grid-item {
+    height: 650px;
+  }
+
+  .events-grid .event-image-wrap {
+    height: 200px;
+    min-height: 200px;
+    flex-basis: 200px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .events-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .events-grid .event-grid-item {
+    height: 620px;
+  }
+
+  .events-grid .event-image-wrap {
+    height: 180px;
+    min-height: 180px;
+    flex-basis: 180px;
+  }
+
+  .events-grid .future-card h3 {
+    font-size: 18px;
+  }
+
+  .events-grid .future-card p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .event-grid-item {
+    width: 100%;
+  }
+
+  .events-grid .future-card {
+    width: 100%;
+    min-height: 0;
+  }
+
+  .events-grid .future-card-body {
+    padding: 16px;
+  }
+
+  .events-grid .event-image-wrap {
+    height: 210px;
+    min-height: 210px;
+    flex-basis: 210px;
+  }
+
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .events-grid {
+    gap: 16px;
+  }
+
+  .events-grid .future-card-body {
+    padding: 14px;
+  }
+
+  .events-grid .event-image-wrap {
+    height: 185px;
+    min-height: 185px;
+    flex-basis: 185px;
+  }
+
+  .events-grid .future-card h3 {
+    font-size: 18px;
+  }
+
+  .events-grid .future-card p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .events-grid .meta-line {
+    font-size: 11px;
+  }
+
+  .events-grid .card-actions {
+    gap: 7px;
+  }
+
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .events-grid .event-image-wrap {
+    height: 165px;
+    min-height: 165px;
+    flex-basis: 165px;
+  }
+
+  .events-grid .future-card-body {
+    padding: 12px;
+  }
+
+  .events-grid .future-card h3 {
+    font-size: 17px;
+  }
+
+  .events-grid .card-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .events-grid .outline-action,
+  .events-grid .outline-mini {
+    width: 100%;
+  }
+
+}
+
+
+
+/* =========================================================
    MOBILE
 ========================================================= */
 
