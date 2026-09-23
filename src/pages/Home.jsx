@@ -42,6 +42,7 @@ export default function Home() {
         <div className="home-frame-link"><Link to="/achievements">View All Achievements <ArrowRight size={15}/></Link></div>
       </NeonFrame>
     </Container>
+    
     {/* Engineering Culture Section */}
       <EngineeringCulture />
   </main>;
