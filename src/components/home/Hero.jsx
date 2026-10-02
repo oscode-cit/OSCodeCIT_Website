@@ -239,13 +239,7 @@ export default function Hero() {
                 duration: 0.8,
               }}
               className="
-                text-5xl
-                font-black
-                leading-[0.98]
-                tracking-[-0.045em]
-                sm:text-6xl
-                lg:text-[4.15rem]
-                xl:text-[4.6rem]
+                text-white
               "
             >
               <span className="block text-white">
@@ -255,12 +249,7 @@ export default function Hero() {
               <span
                 className="
                   block
-                  bg-gradient-to-r
-                  from-white
-                  via-red-400
-                  to-red-600
-                  bg-clip-text
-                  text-transparent
+                  text-white
                 "
               >
                 Real Engineering.
@@ -269,12 +258,8 @@ export default function Hero() {
               <span
                 className="
                   block
-                  bg-gradient-to-r
-                  from-white
-                  via-slate-100
-                  to-red-200
-                  bg-clip-text
-                  text-transparent
+                  text-white
+                  
                 "
               >
                 Zero Boundaries.
