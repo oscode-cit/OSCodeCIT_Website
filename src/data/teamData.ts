@@ -135,11 +135,10 @@ export const departments: Department[] = [
         "Leads the technical team in building projects, exploring new technologies, and helping members improve their development skills.",
 
       skills: [
-        "App Development"
         "Web Development",
-        "Programming",
-        "Open Source",
-        "Projects",
+        "Programming ⁕ Projects",
+        "Open Source ⁕ Coding",
+        "App Development",
       ],
 
       github: "https://github.com/durgaprajapati083",
